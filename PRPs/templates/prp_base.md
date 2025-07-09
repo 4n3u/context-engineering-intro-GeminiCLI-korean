@@ -1,92 +1,91 @@
-# PRP Template for Gemini CLI
+# Gemini CLI용 PRP 템플릿
 name: base_prp_template_v2
 version: 2
 type: prp
-author: Sathariels -- this is just and edited version of the template of coleam00 most credit goes to him. 
-date_created: 07/7/2025
+author: Sathariels -- 이 템플릿은 coleam00의 템플릿을 편집한 것이며, 대부분의 공로는 그에게 있습니다.
+date_created: 2025-07-07
 description: |
-  Template optimized for AI agents to implement features with sufficient context and self-validation capabilities to achieve working code through iterative refinement.
-```
+  AI 에이전트가 충분한 컨텍스트와 자체 검증 기능을 통해 반복적인 개선을 통해 작동하는 코드를 구현할 수 있도록 최적화된 템플릿입니다.
 
-## Purpose
-A structured, context-rich PRP format for Gemini CLI with built-in validation loops and examples.
+## 목적
+내장된 유효성 검사 루프와 예제를 포함하는 Gemini CLI용 구조화되고 컨텍스트가 풍부한 PRP 형식입니다.
 
-## Core Principles
-1. **Context is King**: Include ALL necessary documentation, examples, and caveats
-2. **Validation Loops**: Provide executable tests/lints the AI can run and fix
-3. **Information Dense**: Use keywords and patterns from the codebase
-4. **Progressive Success**: Start simple, validate, then enhance
-5. **Global rules**: Follow all rules in GEMINI.md
+## 핵심 원칙
+1. **컨텍스트가 핵심**: 필요한 모든 문서, 예제 및 주의 사항을 포함합니다.
+2. **유효성 검사 루프**: AI가 실행하고 수정할 수 있는 실행 가능한 테스트/린트를 제공합니다.
+3. **정보 밀도**: 코드베이스의 키워드 및 패턴을 사용합니다.
+4. **점진적 성공**: 간단하게 시작하고, 유효성을 검사한 다음, 개선합니다.
+5. **전역 규칙**: GEMINI.md의 모든 규칙을 따릅니다.
 
 ---
 
-## Goal
-[What needs to be built - be specific about the end state and desires]
+## 목표
+[무엇을 구축해야 하는지 - 최종 상태 및 요구 사항에 대해 구체적으로 설명하십시오.]
 
-## Why
-- [Business value and user impact]
-- [Integration with existing features]
-- [Problems this solves and for whom]
+## 이유
+- [비즈니스 가치 및 사용자 영향]
+- [기존 기능과의 통합]
+- [이것이 해결하는 문제 및 누구를 위한 것인지]
 
-## What
-[User-visible behavior and technical requirements]
+## 내용
+[사용자에게 보이는 동작 및 기술 요구 사항]
 
-### Success Criteria
+### 성공 기준
 ```yaml
 success_criteria:
-  - description: [Specific measurable outcome 1]
-  - description: [Specific measurable outcome 2]
+  - description: [구체적인 측정 가능한 결과 1]
+  - description: [구체적인 측정 가능한 결과 2]
 ```
 
-## All Needed Context
+## 필요한 모든 컨텍스트
 
-### Documentation & References (list all context needed to implement the feature)
+### 문서 및 참조 (기능 구현에 필요한 모든 컨텍스트 나열)
 ```yaml
-# MUST READ - Include these in your context window
-- url: [Official API docs URL]
-  why: [Specific sections/methods you'll need]
+# 반드시 읽어야 함 - 컨텍스트 창에 포함
+- url: [공식 API 문서 URL]
+  why: [필요한 특정 섹션/메서드]
 
 - file: [path/to/example.py]
-  why: [Pattern to follow, gotchas to avoid]
+  why: [따라야 할 패턴, 피해야 할 문제점]
 
-- doc: [Library documentation URL] 
-  section: [Specific section about common pitfalls]
-  critical: [Key insight that prevents common errors]
+- doc: [라이브러리 문서 URL] 
+  section: [일반적인 문제점에 대한 특정 섹션]
+  critical: [일반적인 오류를 방지하는 핵심 통찰력]
 
 - docfile: [PRPs/ai_docs/file.md]
-  why: [docs that the user has pasted in to the project]
+  why: [사용자가 프로젝트에 붙여넣은 문서]
 ```
 
-### Current Codebase tree (run `tree` in the root of the project) to get an overview of the codebase
+### 현재 코드베이스 트리 (프로젝트 루트에서 `tree`를 실행하여 코드베이스 개요 확인)
 ```bash
-# paste tree output here
+# 여기에 트리 출력 붙여넣기
 ```
 
-### Desired Codebase tree with files to be added and responsibility of file
+### 추가될 파일 및 파일의 책임이 있는 원하는 코드베이스 트리
 ```bash
-# Show which files will be created/edited
+# 생성/편집될 파일 표시
 ```
 
-### Known Gotchas of our codebase & Library Quirks
+### 코드베이스의 알려진 문제점 및 라이브러리 특이 사항
 ```python
-# CRITICAL: [Library name] requires [specific setup]
-# Example: FastAPI requires async functions for endpoints
-# Example: This ORM doesn't support batch inserts over 1000 records
-# Example: We use pydantic v2 and ...
+# 중요: [라이브러리 이름]은 [특정 설정]을 요구합니다.
+# 예시: FastAPI는 엔드포인트에 비동기 함수를 요구합니다.
+# 예시: 이 ORM은 1000개 이상의 레코드에 대한 일괄 삽입을 지원하지 않습니다.
+# 예시: 우리는 pydantic v2를 사용하며 ...
 ```
 
-## Implementation Blueprint
+## 구현 청사진
 
-### Data models and structure
+### 데이터 모델 및 구조
 ```python
-# Examples: 
-#  - orm models
-#  - pydantic models
-#  - pydantic schemas
-#  - validators
+# 예시: 
+#  - orm 모델
+#  - pydantic 모델
+#  - pydantic 스키마
+#  - 유효성 검사기
 ```
 
-### List of tasks to be completed to fulfill the PRP
+### PRP를 이행하기 위해 완료할 작업 목록
 ```yaml
 Task 1:
   MODIFY src/existing_module.py:
@@ -99,17 +98,17 @@ Task 1:
     - MODIFY: class name and logic
     - KEEP: error handling pattern
 
-# ... additional tasks ...
+# ... 추가 작업 ...
 ```
 
-### Per task pseudocode
+### 작업별 의사 코드
 ```python
-# Task 1 pseudocode
+# Task 1 의사 코드
 async def new_feature(param: str) -> Result:
-    # PATTERN: validate input (see src/validators.py)
+    # PATTERN: 입력 유효성 검사 (src/validators.py 참조)
     validated = validate_input(param)
 
-    # GOTCHA: requires connection pooling
+    # GOTCHA: 연결 풀링 필요
     async with get_connection() as conn:
         @retry(attempts=3, backoff=exponential)
         async def _inner():
@@ -117,13 +116,13 @@ async def new_feature(param: str) -> Result:
             return await external_api.call(validated)
 
         result = await _inner()
-    return format_response(result)  # see src/utils/responses.py
+    return format_response(result)  # src/utils/responses.py 참조
 ```
 
-### Integration Points
+### 통합 지점
 ```yaml
 DATABASE:
-  - migration: "Add column 'feature_enabled' to users table"
+  - migration: "users 테이블에 'feature_enabled' 열 추가"
   - index: "CREATE INDEX idx_feature_lookup ON users(feature_id)"
 
 CONFIG:
@@ -135,15 +134,15 @@ ROUTES:
   - pattern: "router.include_router(feature_router, prefix='/feature')"
 ```
 
-## Validation Loop
+## 유효성 검사 루프
 
-### Level 1: Syntax & Style
+### 레벨 1: 구문 및 스타일
 ```bash
 ruff check src/new_feature.py --fix
 mypy src/new_feature.py
 ```
 
-### Level 2: Unit Tests
+### 레벨 2: 단위 테스트
 ```python
 def test_happy_path():
     result = new_feature("valid")
@@ -163,7 +162,7 @@ def test_external_api_timeout():
 uv run pytest test_new_feature.py -v
 ```
 
-### Level 3: Integration Test
+### 레벨 3: 통합 테스트
 ```bash
 uv run python -m src.main --dev
 
@@ -172,32 +171,34 @@ curl -X POST http://localhost:8000/feature \
   -d '{"param": "test_value"}'
 ```
 
-## Final validation Checklist
+## 최종 유효성 검사 체크리스트
 ```yaml
-- [ ] All tests pass: uv run pytest tests/ -v
-- [ ] No linting errors: uv run ruff check src/
-- [ ] No type errors: uv run mypy src/
-- [ ] Manual test successful: [insert curl/command]
-- [ ] Error cases handled gracefully
-- [ ] Logs are informative but not verbose
-- [ ] Documentation updated if needed
+- [ ] 모든 테스트 통과: uv run pytest tests/ -v
+- [ ] 린팅 오류 없음: uv run ruff check src/
+- [ ] 타입 오류 없음: uv run mypy src/
+- [ ] 수동 테스트 성공: [curl/명령 삽입]
+- [ ] 오류 사례가 정상적으로 처리됨
+- [ ] 로그는 유익하지만 장황하지 않음
+- [ ] 필요한 경우 문서 업데이트
 ```
 
 ---
 
-## Anti-Patterns to Avoid
-- ❌ Creating new patterns when existing ones suffice
-- ❌ Skipping validation
-- ❌ Ignoring test failures
-- ❌ Using sync functions in async flows
-- ❌ Hardcoding config values
-- ❌ Catching all exceptions generically
+## 피해야 할 안티 패턴
+- ❌ 기존 패턴으로 충분할 때 새 패턴 생성
+- ❌ 유효성 검사 건너뛰기
+- ❌ 테스트 실패 무시
+- ❌ 비동기 흐름에서 동기 함수 사용
+- ❌ 구성 값 하드코딩
+- ❌ 모든 예외를 일반적으로 포착
 
 ---
 
 ```bash
-# To generate this PRP:
+# 이 PRP를 생성하려면:
 gemini context generate-prp INITIAL.md
 
-# To execute this PRP:
+# 이 PRP를 실행하려면:
 gemini context execute-prp PRPs/your-feature.md
+
+```

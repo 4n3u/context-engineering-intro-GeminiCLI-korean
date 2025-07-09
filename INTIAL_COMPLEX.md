@@ -1,111 +1,104 @@
+> 이 파일의 정보를 수집하고, 하위 수준 작업을 구현하며, 상위 및 중간 수준 목표를 충족하는 코드를 생성합니다.
 
+## 상위 수준 목표
 
-> Ingest the information from this file, implement the Low-Level Tasks, and generate the code that will satisfy the High and Mid-Level Objectives.
+- [상위 수준 목표를 여기에 입력 - 무엇을 구축하고 싶습니까?]
 
-## High-Level Objective
+## 중간 수준 목표
 
-- [High level goal goes here - what do you want to build?]
+- [중간 수준 목표 목록 - 상위 수준 목표를 달성하기 위한 단계는 무엇입니까?]
+- [각 목표는 구체적이고 측정 가능해야 합니다.]
+- [하지만 너무 자세하게는 안 됩니다. 세부 사항은 구현 노트에 저장하십시오.]
 
-## Mid-Level Objective
+## 구현 노트
 
-- [List of mid-level objectives - what are the steps to achieve the high-level objective?]
-- [Each objective should be concrete and measurable]
-- [But not too detailed - save details for implementation notes]
+- [중요한 기술 세부 사항 - 중요한 기술 세부 사항은 무엇입니까?]
+- [종속성 및 요구 사항 - 종속성 및 요구 사항은 무엇입니까?]
+- [따라야 할 코딩 표준 - 따라야 할 코딩 표준은 무엇입니까?]
+- [기타 기술 지침 - 기타 기술 지침은 무엇입니까?]
 
-## Implementation Notes
+## 컨텍스트
 
-- [Important technical details - what are the important technical details?]
-- [Dependencies and requirements - what are the dependencies and requirements?]
-- [Coding standards to follow - what are the coding standards to follow?]
-- [Other technical guidance - what are other technical guidance?]
-
-## Context
-
-### Beginning context
+### 시작 컨텍스트
 <!--
-Optional: List files/folders that already exist in the codebase BEFORE this feature.
-Helpful for preventing overwrites or duplication.
+선택 사항: 이 기능을 구현하기 전에 코드베이스에 이미 존재하는 파일/폴더를 나열합니다.
+덮어쓰기 또는 중복을 방지하는 데 도움이 됩니다.
 
-✅ Use when editing existing modules
-❌ Skip for small new features or prototypes
+✅ 기존 모듈을 편집할 때 사용
+❌ 작은 새 기능 또는 프로토타입의 경우 건너뛰기
 -->
 
-- [List of files that exist at start - what files exist at start?]
+- [시작 시 존재하는 파일 목록 - 시작 시 어떤 파일이 존재합니까?]
 
-### Ending context
+### 종료 컨텍스트
 <!--
-Optional: List expected files/folders AFTER the feature is implemented.
-This helps Gemini CLI generate the correct file structure and placement.
+선택 사항: 기능이 구현된 후 예상되는 파일/폴더를 나열합니다.
+이는 Gemini CLI가 올바른 파일 구조 및 배치를 생성하는 데 도움이 됩니다.
 
-✅ Use when you want full control over output structure
-❌ Skip if you're okay with the CLI inferring structure
+✅ 출력 구조를 완전히 제어하려는 경우 사용
+❌ CLI가 구조를 추론하도록 허용하는 경우 건너뛰기
 -->
 
-- [List of files that will exist at end - what files will exist at end?]
+- [끝에 존재할 파일 목록 - 끝에 어떤 파일이 존재할까요?]
 
-## Low-Level Tasks
+## 하위 수준 작업
 
-> Ordered from start to finish
+> 시작부터 끝까지 순서대로
 
-1. [First task - what is the first task?]
-
-```
-What prompt would you run to complete this task?
-What file do you want to CREATE or UPDATE?
-What function do you want to CREATE or UPDATE?
-What are details you want to add to drive the code changes?
-```
-
-2. [Second task - what is the second task?]
+1. [첫 번째 작업 - 첫 번째 작업은 무엇입니까?]
 
 ```
-What prompt would you run to complete this task?
-What file do you want to CREATE or UPDATE?
-What function do you want to CREATE or UPDATE?
-What are details you want to add to drive the code changes?
+이 작업을 완료하기 위해 어떤 프롬프트를 실행하시겠습니까?
+어떤 파일을 생성하거나 업데이트하시겠습니까?
+어떤 함수를 생성하거나 업데이트하시겠습니까?
+코드 변경을 유도하기 위해 추가하고 싶은 세부 정보는 무엇입니까?
 ```
 
-3. [Third task - what is the third task?]
+2. [두 번째 작업 - 두 번째 작업은 무엇입니까?]
 
 ```
-What prompt would you run to complete this task?
-What file do you want to CREATE or UPDATE?
-What function do you want to CREATE or UPDATE?
-What are details you want to add to drive the code changes?
+이 작업을 완료하기 위해 어떤 프롬프트를 실행하시겠습니까?
+어떤 파일을 생성하거나 업데이트하시겠습니까?
+어떤 함수를 생성하거나 업데이트하시겠습니까?
+코드 변경을 유도하기 위해 추가하고 싶은 세부 정보는 무엇입까?
+```
+
+3. [세 번째 작업 - 세 번째 작업은 무엇입니까?]
+
+```
+이 작업을 완료하기 위해 어떤 프롬프트를 실행하시겠습니까?
+어떤 파일을 생성하거나 업데이트하시겠습니까?
+어떤 함수를 생성하거나 업데이트하시겠습니까?
+코드 변경을 유도하기 위해 추가하고 싶은 세부 정보는 무엇입니까?
 ```
 
 
 ---
 
-## EXAMPLES
+## 예제
 
-Provide links or file paths to patterns the agent should emulate.
+에이전트가 모방해야 하는 패턴에 대한 링크 또는 파일 경로를 제공합니다.
 
-- [Insert more relevant examples as needed]
-
----
-
-## DOCUMENTATION
-
-Include links to official docs, internal documentation, or anything else the AI should use to understand the problem.
-
-- https://developers.google.com/ai/gemini/cli#commands — Gemini CLI reference
-- https://docs.python.org/3/library/argparse.html — argparse docs
-- [Insert more references as needed]
+- [필요에 따라 더 관련성 높은 예제 삽입]
 
 ---
 
-## OTHER CONSIDERATIONS
+## 문서
 
-Mention anything that could trip up the implementation.
+공식 문서, 내부 문서 또는 AI가 문제를 이해하는 데 사용해야 하는 기타 모든 것에 대한 링크를 포함합니다.
 
-- `.env` must not be committed — include in `.gitignore`
-- All CLI output must be JSON-formatted
-- Avoid logging secrets
-- Rate limit API calls if applicable
-- [Add any other known pitfalls or constraints]
+- https://developers.google.com/ai/gemini/cli#commands — Gemini CLI 참조
+- https://docs.python.org/3/library/argparse.html — argparse 문서
+- [필요에 따라 더 많은 참조 삽입]
 
+---
 
+## 기타 고려 사항
 
+구현을 방해할 수 있는 모든 것을 언급합니다.
 
-
+- `.env`는 커밋되지 않아야 합니다. `.gitignore`에 포함하십시오.
+- 모든 CLI 출력은 JSON 형식이어야 합니다.
+- 로깅 비밀을 피하십시오.
+- 해당되는 경우 API 호출 속도 제한
+- [알려진 다른 문제점 또는 제약 조건 추가]

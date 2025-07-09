@@ -1,44 +1,41 @@
+## 기능:
 
-## FEATURE:
+Gemini CLI가 구현하기를 원하는 기능을 단일하고 실행 가능한 문장으로 설명하십시오.
+플래그, 예상 동작, 엣지 케이스 및 성공 기준을 정확하게 명시하십시오.
+예시:
+"민감한 헤더를 제거하고 HTTP 요청/응답 세부 정보를 로깅하며, 성공 시 코드 0으로, 실패 시 코드 1로 종료하는 `--verbose` 플래그를 CLI에 추가합니다."
 
-Describe the feature you want Gemini CLI to implement in a single, actionable sentence.
-Be precise: name flags, expected behavior, edge cases, and success criteria.
-Example:
-"Add a `--verbose` flag to the CLI that logs HTTP request/response details,
-redacting sensitive headers, and exits with code 0 on success or 1 on failure."
+[여기에 간결한 기능 설명을 삽입하십시오. 위의 모든 텍스트를 제거하는 것을 잊지 마십시오.]
 
-[Insert your concise feature description here remember to remove all the text above]
+## 예제:
 
-## EXAMPLES:
+Gemini가 따라야 할 패턴을 보여주는 `examples/` 폴더의 코드 샘플을 참조하십시오.
+파일 경로와 모방할 내용에 대한 간략한 메모를 포함하십시오.
 
-Reference code samples in the examples/ folder that illustrate patterns Gemini should follow.
-Include file paths and a brief note on what to emulate.
+- `examples/cli_pattern.py` — 표준 argparse 설정 및 하위 명령 처리 방법을 보여줍니다.
+- `examples/error_handling.py` — 구조화된 예외 처리 및 종료 코드를 보여줍니다.
 
-- `examples/cli_pattern.py` — shows standard argparse setup and subcommand handling
-- `examples/error_handling.py` — demonstrates structured exception catching and exit codes
-
-[Insert your examples here remember to remove all the text above]
+[여기에 예제를 삽입하십시오. 위의 모든 텍스트를 제거하는 것을 잊지 마십시오.]
 
 
-## DOCUMENTATION:
+## 문서:
 
-List URLs or internal docs Gemini CLI may need for context.
-Include a one-line summary of each resource.
+Gemini CLI가 컨텍스트에 필요할 수 있는 URL 또는 내부 문서를 나열하십시오.
+각 리소스에 대한 한 줄 요약을 포함하십시오.
 
-- https://developers.google.com/ai/gemini/cli#commands — Official Gemini CLI reference
-- https://company.internal/rag/docs — Internal RAG server API documentation
+- https://developers.google.com/ai/gemini/cli#commands — 공식 Gemini CLI 참조
+- https://company.internal/rag/docs — 내부 RAG 서버 API 문서
 
-[Insert your documentation description here remember to remove all the text above]
+[여기에 문서 설명을 삽입하십시오. 위의 모든 텍스트를 제거하는 것을 잊지 마십시오.]
 
 
-## OTHER CONSIDERATIONS:
+## 기타 고려 사항:
 
-Mention special requirements, configuration, or common pitfalls.
-Examples: authentication, rate limits, environment variables, test fixtures, formatting constraints.
+특별한 요구 사항, 구성 또는 일반적인 문제점을 언급하십시오.
+예시: 인증, 속도 제한, 환경 변수, 테스트 픽스처, 형식 제약 조건.
 
-- Ensure `API_TOKEN` is loaded from a `.env` file via python-dotenv
-- All CLI output must be valid JSON for downstream parsing
-- Tip: use pytest's `monkeypatch` to mock filesystem and network calls in CLI tests
+- `API_TOKEN`이 `python-dotenv`를 통해 `.env` 파일에서 로드되는지 확인하십시오.
+- 모든 CLI 출력은 다운스트림 구문 분석을 위해 유효한 JSON이어야 합니다.
+- 팁: pytest의 `monkeypatch`를 사용하여 CLI 테스트에서 파일 시스템 및 네트워크 호출을 모의하십시오.
 
-[Insert your Other Considerations here remember to remove all the text above]
-
+[여기에 기타 고려 사항을 삽입하십시오. 위의 모든 텍스트를 제거하는 것을 잊지 마십시오.]

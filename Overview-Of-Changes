@@ -1,137 +1,137 @@
-# Gemini CLI Optimization Report: Context Engineering Enhancements
+# Gemini CLI 최적화 보고서: 컨텍스트 엔지니어링 개선 사항
 
-## Overview
-This document summarizes the modifications made to core project files and templates to enhance compatibility with **Gemini CLI**, focusing on context engineering, command execution, agent understanding, and iterative validation. The optimizations help Gemini interpret, plan, and execute instructions more reliably by using structure, metadata, and explicit guidance.
+## 개요
+이 문서는 컨텍스트 엔지니어링, 명령 실행, 에이전트 이해 및 반복적인 유효성 검사에 중점을 두고 **Gemini CLI**와의 호환성을 향상시키기 위해 핵심 프로젝트 파일 및 템플릿에 적용된 수정 사항을 요약합니다. 이러한 최적화는 구조, 메타데이터 및 명시적인 지침을 사용하여 Gemini가 지침을 보다 안정적으로 해석, 계획 및 실행하는 데 도움이 됩니다.
 
 ---
 
-## 🔧 Files Updated and Key Changes
+## 🔧 업데이트된 파일 및 주요 변경 사항
 
 ### 1. `README.md`
-**Purpose:** Introduce Gemini CLI usage to the project.
+**목적:** 프로젝트에 Gemini CLI 사용법을 소개합니다.
 
-**Changes:**
-- Replaced Claude-specific commands with `gemini context` equivalents.
-- Updated terminology and tool references to align with Gemini CLI.
-- Added inline comments for project maintainers on how to adapt for Gemini.
+**변경 사항:**
+- Claude 관련 명령을 `gemini context` 동등한 명령으로 대체했습니다.
+- Gemini CLI에 맞춰 용어 및 도구 참조를 업데이트했습니다.
+- 프로젝트 관리자가 Gemini에 맞게 조정하는 방법에 대한 인라인 주석을 추가했습니다.
 
-**Impact:**
-Improves onboarding and ensures developers use the Gemini CLI correctly from day one.
+**영향:**
+온보딩을 개선하고 개발자가 처음부터 Gemini CLI를 올바르게 사용하도록 보장합니다.
 
 ---
 
 ### 2. `INITIAL.md` & `INITIAL_EXAMPLE.md`
-**Purpose:** Capture clear, actionable feature requests.
+**목적:** 명확하고 실행 가능한 기능 요청을 캡처합니다.
 
-**Changes:**
-- Added inline guidance for writing context-aware requests.
-- Introduced Gemini-friendly structure (e.g., named sections, expected inputs).
-- Used realistic examples involving agents and tools.
+**변경 사항:**
+- 컨텍스트 인식 요청 작성을 위한 인라인 지침을 추가했습니다.
+- Gemini 친화적인 구조(예: 명명된 섹션, 예상 입력)를 도입했습니다.
+- 에이전트 및 도구를 포함하는 현실적인 예제를 사용했습니다.
 
-**Impact:**
-Better parsing and planning when Gemini generates PRPs. Fewer misinterpretations of vague feature specs.
+**영향:**
+Gemini가 PRP를 생성할 때 더 나은 구문 분석 및 계획을 제공합니다. 모호한 기능 사양의 오해를 줄입니다.
 
 ---
 
-### 3. `GEMINI.md` (Global Agent Rules)
-**Purpose:** Define project-wide rules for Gemini to follow.
+### 3. `GEMINI.md` (전역 에이전트 규칙)
+**목적:** Gemini가 따를 프로젝트 전체 규칙을 정의합니다.
 
-**Changes:**
-- Structured modular layout with a YAML header.
-- Tagged language-specific conventions (Python, C++, Lua).
-- Added executable commands and formatting/linting tools.
+**변경 사항:**
+- YAML 헤더가 있는 구조화된 모듈식 레이아웃.
+- 언어별 규칙(Python, C++, Lua) 태그 지정.
+- 실행 가능한 명령 및 서식/린팅 도구 추가.
 
-**Impact:**
-Guides Gemini in choosing coding styles, structuring modules, and validating outputs consistently.
+**영향:**
+Gemini가 코딩 스타일을 선택하고, 모듈을 구성하고, 출력을 일관되게 유효성 검사하는 데 도움이 됩니다.
 
 ---
 
 ### 4. `GEMINI_PROJECT_GUIDELINES.md`
-**Purpose:** Version of `CLAUDE.md` reworked specifically for Gemini agents.
+**목적:** Gemini 에이전트를 위해 특별히 재작업된 `CLAUDE.md` 버전.
 
-**Changes:**
-- Embedded `gemini context` commands for loading planning docs and tracking tasks.
-- Updated documentation style, added CLI support blocks.
-- Clarified testing and validation expectations.
+**변경 사항:**
+- 계획 문서 로드 및 작업 추적을 위한 `gemini context` 명령 포함.
+- 문서 스타일 업데이트, CLI 지원 블록 추가.
+- 테스트 및 유효성 검사 기대치 명확화.
 
-**Impact:**
-Empowers agents to interact with task state and code architecture via Gemini-native workflows.
+**영향:**
+Gemini 기본 워크플로우를 통해 에이전트가 작업 상태 및 코드 아키텍처와 상호 작용할 수 있도록 지원합니다.
 
 ---
 
 ### 5. `base_prp_template_v2.md`
-**Purpose:** Standard PRP template for implementing new features.
+**목적:** 새로운 기능을 구현하기 위한 표준 PRP 템플릿.
 
-**Changes:**
-- Added PRP metadata (`name`, `version`, `type`, `author`, etc.)
-- Converted checklist sections into structured YAML lists.
-- Reinforced patterns for validation loops and agent test plans.
-- Added CLI command footer for ease of use.
+**변경 사항:**
+- PRP 메타데이터(`name`, `version`, `type`, `author` 등) 추가.
+- 체크리스트 섹션을 구조화된 YAML 목록으로 변환.
+- 유효성 검사 루프 및 에이전트 테스트 계획에 대한 패턴 강화.
+- 사용 편의성을 위해 CLI 명령 바닥글 추가.
 
-**Impact:**
-Boosts Gemini’s planning and execution capabilities by presenting PRP data in a structured, parsable format.
+**영향:**
+PRP 데이터를 구조화되고 구문 분석 가능한 형식으로 제공하여 Gemini의 계획 및 실행 기능을 향상시킵니다.
 
 ---
 
 ### 6. `multi_agent_research_email_system.md` (PRP)
-**Purpose:** Real-world PRP to implement multi-agent system.
+**목적:** 다중 에이전트 시스템을 구현하기 위한 실제 PRP.
 
-**Changes:**
-- Applied structured PRP metadata.
-- Converted success criteria and checklist into YAML.
-- Integrated explicit test plans, streaming logic, and OAuth quirks.
-- Included tool registration and agent dependency patterns.
+**변경 사항:**
+- 구조화된 PRP 메타데이터 적용.
+- 성공 기준 및 체크리스트를 YAML로 변환.
+- 명시적인 테스트 계획, 스트리밍 로직 및 OAuth 특이 사항 통합.
+- 도구 등록 및 에이전트 종속성 패턴 포함.
 
-**Impact:**
-Allows Gemini CLI to reliably implement a full multi-agent system with real APIs, passing all tests.
+**영향:**
+Gemini CLI가 실제 API를 사용하여 모든 테스트를 통과하는 완전한 다중 에이전트 시스템을 안정적으로 구현할 수 있도록 합니다.
 
 ---
 
 ### 7. `settings.local.json`
-**Purpose:** Define agent permission boundaries.
+**목적:** 에이전트 권한 경계를 정의합니다.
 
-**Changes:**
-- Added support for `env`, `export`, `cp`, `rm`, `pip install`, `git`, and `WebFetch`.
-- Added `defaultTimeout` safeguard.
+**변경 사항:**
+- `env`, `export`, `cp`, `rm`, `pip install`, `git`, `WebFetch` 지원 추가.
+- `defaultTimeout` 안전 장치 추가.
 
-**Impact:**
-Enables Gemini CLI to run all required setup, validation, and testing commands without restriction or risk.
+**영향:**
+Gemini CLI가 제한이나 위험 없이 필요한 모든 설정, 유효성 검사 및 테스트 명령을 실행할 수 있도록 합니다.
 
 ---
 
 ### 8. `.claude/commands/execute-prp.md`
-**Purpose:** Drive PRP execution with structured agent logic.
+**목적:** 구조화된 에이전트 로직으로 PRP 실행을 구동합니다.
 
-**Changes:**
-- Added YAML header block to define `name`, `args`, and description.
-- Converted execution steps into a Gemini-readable checklist.
-- Replaced vague phrasing with actionable CLI or sandbox commands.
+**변경 사항:**
+- `name`, `args` 및 설명을 정의하는 YAML 헤더 블록 추가.
+- 실행 단계를 Gemini가 읽을 수 있는 체크리스트로 변환.
+- 모호한 문구를 실행 가능한 CLI 또는 샌드박스 명령으로 대체.
 
-**Impact:**
-Enables Gemini to parse, execute, and validate PRPs step-by-step with clear checkpoints and no ambiguity.
+**영향:**
+Gemini가 명확한 체크포인트와 모호성 없이 PRP를 단계별로 구문 분석, 실행 및 유효성 검사할 수 있도록 합니다.
 
 ---
 
-## 📈 Summary of Benefits to Gemini CLI
+## 📈 Gemini CLI에 대한 이점 요약
 
-| Feature Area            | Improvement                                 |
+| 기능 영역            | 개선 사항                                 |
 |------------------------|----------------------------------------------|
-| PRP Parsing            | Structured YAML blocks, clear metadata       |
-| Command Execution      | Explicit arg references, validation routines |
-| Context Engineering    | Rich examples, caveats, file structure trees |
-| Testing & Validation   | Checklists and test coverage instructions    |
-| Agent Behavior Control | Expanded `settings.local.json` permissions   |
-| Multi-Agent Systems    | Seamless integration of agent-as-tool flows  |
+| PRP 구문 분석            | 구조화된 YAML 블록, 명확한 메타데이터       |
+| 명령 실행      | 명시적인 인수 참조, 유효성 검사 루틴 |
+| 컨텍스트 엔지니어링    | 풍부한 예제, 주의 사항, 파일 구조 트리 |
+| 테스트 및 유효성 검사   | 체크리스트 및 테스트 커버리지 지침    |
+| 에이전트 동작 제어 | 확장된 `settings.local.json` 권한   |
+| 다중 에이전트 시스템    | 에이전트-도구 흐름의 원활한 통합  |
 
 ---
 
-## ✅ Outcome
-These changes form a robust foundation for using Gemini CLI in context-rich engineering environments. They:
+## ✅ 결과
+이러한 변경 사항은 컨텍스트가 풍부한 엔지니어링 환경에서 Gemini CLI를 사용하는 강력한 기반을 형성합니다. 다음을 수행합니다.
 
-- Maximize agent understanding by reducing ambiguity
-- Enforce repeatable validation and execution pipelines
-- Make complex workflows like multi-agent orchestration achievable with minimal human input
+- 모호성을 줄여 에이전트 이해도를 극대화합니다.
+- 반복 가능한 유효성 검사 및 실행 파이프라인을 강제합니다.
+- 최소한의 사람 개입으로 다중 에이전트 오케스트레이션과 같은 복잡한 워크플로우를 달성할 수 있도록 합니다.
 
-This system is now ready for production-level AI-assisted development using Gemini CLI.
+이 시스템은 이제 Gemini CLI를 사용하는 프로덕션 수준 AI 지원 개발을 위한 준비가 완료되었습니다.
 
 ---

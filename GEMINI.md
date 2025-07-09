@@ -1,106 +1,106 @@
 <!--
-  GEMINI_PROJECT_GUIDELINES.md — Optimized for Gemini CLI
-  This version keeps all original content and structure, but is annotated for Gemini CLI context awareness.
+  GEMINI_PROJECT_GUIDELINES.md — Gemini CLI에 최적화됨
+  이 버전은 모든 원본 콘텐츠와 구조를 유지하지만, Gemini CLI 컨텍스트 인식을 위해 주석이 추가되었습니다.
 -->
 
-### 🔄 Project Awareness & Context
-- **Always read `PLANNING.md`** at the start of a new Gemini CLI session to load the project’s architecture, goals, style, and constraints.
+### 🔄 프로젝트 인식 및 컨텍스트
+- **새로운 Gemini CLI 세션을 시작할 때마다 `PLANNING.md`를 항상 읽어** 프로젝트의 아키텍처, 목표, 스타일 및 제약 조건을 로드하십시오.
   ```bash
   gemini context load PLANNING.md
   ```
-- **Check `TASK.md`** before beginning a new task:
+- **새로운 작업을 시작하기 전에 `TASK.md`를 확인하십시오.**
   ```bash
   gemini context list-tasks
   ```
-  If the task isn’t listed, add it with:
+  작업이 목록에 없으면 다음을 사용하여 추가하십시오.
   ```bash
-  gemini context add-task "YYYY-MM-DD: Task description"
+  gemini context add-task "YYYY-MM-DD: 작업 설명"
   ```
-- **Maintain consistency** with naming conventions, file structure, and architecture from `PLANNING.md`.
-- **Activate the virtual environment** before any Python execution:
+- `PLANNING.md`의 명명 규칙, 파일 구조 및 아키텍처와 **일관성을 유지하십시오.**
+- Python을 실행하기 전에 **가상 환경을 활성화하십시오.**
   ```bash
   source venv_linux/bin/activate
   ```
 
-### 🧱 Code Structure & Modularity
-- **Never create a file longer than 500 lines of code.**
-  - Use modularization to split logic into smaller, reusable components.
-- **Organize code into clearly separated modules**, grouped by feature or responsibility. For AI agents:
+### 🧱 코드 구조 및 모듈성
+- **500줄이 넘는 코드를 작성하지 마십시오.**
+  - 모듈화를 사용하여 로직을 더 작고 재사용 가능한 구성 요소로 분할하십시오.
+- 기능 또는 책임별로 그룹화된 **명확하게 분리된 모듈로 코드를 구성하십시오.** AI 에이전트의 경우:
   ```
-  agent.py    # Main agent logic
-  tools.py    # Reusable tools
-  prompts.py  # System prompts and context
+  agent.py    # 주요 에이전트 로직
+  tools.py    # 재사용 가능한 도구
+  prompts.py  # 시스템 프롬프트 및 컨텍스트
   ```
-- **Use clear, consistent imports** — prefer relative imports within packages.
-- **Load environment variables** using:
+- **명확하고 일관된 임포트를 사용하십시오.** — 패키지 내에서 상대 임포트를 선호하십시오.
+- **환경 변수를 로드하려면** 다음을 사용하십시오.
   ```python
   from dotenv import load_dotenv
   load_dotenv()
   ```
 
-### 🧪 Testing & Reliability
-- **Always write Pytest unit tests** for each new function, class, or route.
-- **Check and update existing tests** when changing logic.
-- **Tests must live in a `/tests` folder**, mirroring the structure of the main application:
-  - Include:
-    - ✅ 1 expected use case
-    - ⚠️ 1 edge case
-    - ❌ 1 failure case
-- Run tests using:
+### 🧪 테스트 및 신뢰성
+- 각 새 함수, 클래스 또는 경로에 대해 **항상 Pytest 단위 테스트를 작성하십시오.**
+- 로직을 변경할 때 **기존 테스트를 확인하고 업데이트하십시오.**
+- **테스트는 주 애플리케이션의 구조를 미러링하는 `/tests` 폴더에 있어야 합니다.**
+  - 포함:
+    - ✅ 1가지 예상 사용 사례
+    - ⚠️ 1가지 엣지 케이스
+    - ❌ 1가지 실패 사례
+- 다음을 사용하여 테스트를 실행하십시오.
   ```bash
   pytest tests/
   ```
-  Or automate with:
+  또는 다음을 사용하여 자동화하십시오.
   ```bash
   gemini context test-all
   ```
 
-### ✅ Task Completion
-- **Mark tasks as complete** in `TASK.md` when finished:
+### ✅ 작업 완료
+- 작업이 완료되면 `TASK.md`에서 **작업을 완료로 표시하십시오.**
   ```bash
   gemini context complete-task <task-id>
   ```
-- **Add sub-tasks** discovered during development to the "Discovered During Work" section:
+- 개발 중에 발견된 **하위 작업을 "작업 중 발견" 섹션에 추가하십시오.**
   ```bash
-  gemini context add-subtask "Subtask description"
+  gemini context add-subtask "하위 작업 설명"
   ```
 
-### 📎 Style & Conventions
-- **Language**: Python (default project language)
-- **Style**: Follow PEP8, use type hints, and format with `black`:
+### 📎 스타일 및 규칙
+- **언어**: Python (기본 프로젝트 언어)
+- **스타일**: PEP8을 따르고, 타입 힌트를 사용하며, `black`으로 포맷팅하십시오.
   ```bash
   black . && flake8 .
   ```
-- **Validation**: Use `pydantic` for defining schemas and validating inputs.
-- **Frameworks**:
-  - Use `FastAPI` for API routing.
-  - Use `SQLAlchemy` or `SQLModel` for ORM.
-- **Docstrings**: Use Google style for function documentation:
+- **유효성 검사**: 스키마 정의 및 입력 유효성 검사를 위해 `pydantic`을 사용하십시오.
+- **프레임워크**:
+  - API 라우팅에는 `FastAPI`를 사용하십시오.
+  - ORM에는 `SQLAlchemy` 또는 `SQLModel`을 사용하십시오.
+- **Docstring**: 함수 문서화에 Google 스타일을 사용하십시오.
   ```python
   def example():
       """
-      Brief summary.
+      간략한 요약.
 
       Args:
-          param1 (type): Description.
+          param1 (type): 설명.
 
       Returns:
-          type: Description.
+          type: 설명.
       """
   ```
 
-### 📚 Documentation & Explainability
-- **Update `README.md`** whenever new features are added, dependencies change, or setup instructions are modified:
+### 📚 문서 및 설명 가능성
+- 새 기능이 추가되거나, 종속성이 변경되거나, 설정 지침이 수정될 때마다 **`README.md`를 업데이트하십시오.**
   ```bash
   gemini context update-readme
   ```
-- **Comment non-obvious code** to make it accessible to mid-level developers.
-- **Add `# Reason:` comments** in complex logic to clarify why the logic exists.
+- **명확하지 않은 코드에 주석을 추가하여** 중간 수준 개발자가 접근할 수 있도록 하십시오.
+- 복잡한 로직에 **`# Reason:` 주석을 추가하여** 로직이 존재하는 이유를 명확히 하십시오.
 
-### 🧠 AI Behavior Rules
-- ✅ **Do not assume missing context. Ask questions when uncertain.**
-- 🚫 **Do not hallucinate libraries or functions** — only use known, documented Python packages.
-- 📂 **Confirm file paths and module names** exist before referencing.
-- 🔒 **Do not delete or overwrite existing code** unless instructed via `TASK.md` or explicitly requested in a PRP.
+### 🧠 AI 동작 규칙
+- ✅ **누락된 컨텍스트를 가정하지 마십시오. 불확실할 때는 질문하십시오.**
+- 🚫 **라이브러리 또는 함수를 환각하지 마십시오.** — 알려지고 문서화된 Python 패키지만 사용하십시오.
+- 📂 **참조하기 전에 파일 경로 및 모듈 이름이 존재하는지 확인하십시오.**
+- 🔒 `TASK.md`를 통해 지시되거나 PRP에서 명시적으로 요청되지 않는 한 **기존 코드를 삭제하거나 덮어쓰지 마십시오.**
 
 ---

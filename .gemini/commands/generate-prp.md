@@ -1,69 +1,69 @@
-# Create PRP
+# PRP 생성
 
-## Feature file: $ARGUMENTS
+## 기능 파일: $ARGUMENTS
 
-Generate a complete PRP for general feature implementation with thorough research. Ensure context is passed to the AI agent to enable self-validation and iterative refinement. Read the feature file first to understand what needs to be created, how the examples provided help, and any other considerations.
+철저한 연구를 통해 일반적인 기능 구현을 위한 완전한 PRP를 생성합니다. 자체 검증 및 반복적인 개선을 가능하게 하려면 AI 에이전트에 컨텍스트를 전달해야 합니다. 먼저 기능 파일을 읽어 무엇을 생성해야 하는지, 제공된 예제가 어떻게 도움이 되는지, 기타 고려 사항을 이해하십시오.
 
-The AI agent only gets the context you are appending to the PRP and training data. Assuma the AI agent has access to the codebase and the same knowledge cutoff as you, so its important that your research findings are included or referenced in the PRP. The Agent has Websearch capabilities, so pass urls to documentation and examples.
+AI 에이전트는 PRP에 추가하는 컨텍스트와 훈련 데이터만 얻습니다. AI 에이전트가 코드베이스에 액세스하고 귀하와 동일한 지식 차단 기능을 가지고 있다고 가정하므로 연구 결과가 PRP에 포함되거나 참조되는 것이 중요합니다. 에이전트는 웹 검색 기능을 가지고 있으므로 문서 및 예제에 대한 URL을 전달하십시오.
 
-## Research Process
+## 연구 프로세스
 
-1. **Codebase Analysis**
-   - Search for similar features/patterns in the codebase
-   - Identify files to reference in PRP
-   - Note existing conventions to follow
-   - Check test patterns for validation approach
+1. **코드베이스 분석**
+   - 코드베이스에서 유사한 기능/패턴 검색
+   - PRP에서 참조할 파일 식별
+   - 따를 기존 규칙 기록
+   - 유효성 검사 접근 방식을 위한 테스트 패턴 확인
 
-2. **External Research**
-   - Search for similar features/patterns online
-   - Library documentation (include specific URLs)
-   - Implementation examples (GitHub/StackOverflow/blogs)
-   - Best practices and common pitfalls
+2. **외부 연구**
+   - 온라인에서 유사한 기능/패턴 검색
+   - 라이브러리 문서 (특정 URL 포함)
+   - 구현 예제 (GitHub/StackOverflow/블로그)
+   - 모범 사례 및 일반적인 문제점
 
-3. **User Clarification** (if needed)
-   - Specific patterns to mirror and where to find them?
-   - Integration requirements and where to find them?
+3. **사용자 설명** (필요한 경우)
+   - 미러링할 특정 패턴 및 찾을 위치?
+   - 통합 요구 사항 및 찾을 위치?
 
-## PRP Generation
+## PRP 생성
 
-Using PRPs/templates/prp_base.md as template:
+PRPs/templates/prp_base.md를 템플릿으로 사용:
 
-### Critical Context to Include and pass to the AI agent as part of the PRP
-- **Documentation**: URLs with specific sections
-- **Code Examples**: Real snippets from codebase
-- **Gotchas**: Library quirks, version issues
-- **Patterns**: Existing approaches to follow
+### PRP의 일부로 AI 에이전트에 포함하고 전달할 중요한 컨텍스트
+- **문서**: 특정 섹션이 있는 URL
+- **코드 예제**: 코드베이스의 실제 스니펫
+- **문제점**: 라이브러리 특이 사항, 버전 문제
+- **패턴**: 따를 기존 접근 방식
 
-### Implementation Blueprint
-- Start with pseudocode showing approach
-- Reference real files for patterns
-- Include error handling strategy
-- list tasks to be completed to fullfill the PRP in the order they should be completed
+### 구현 청사진
+- 접근 방식을 보여주는 의사 코드로 시작
+- 패턴에 대한 실제 파일 참조
+- 오류 처리 전략 포함
+- PRP를 이행하기 위해 완료할 작업을 완료해야 하는 순서대로 나열
 
-### Validation Gates (Must be Executable) eg for python
+### 유효성 검사 게이트 (실행 가능해야 함) 예: Python
 ```bash
-# Syntax/Style
+# 구문/스타일
 ruff check --fix && mypy .
 
-# Unit Tests
+# 단위 테스트
 uv run pytest tests/ -v
 
 ```
 
-*** CRITICAL AFTER YOU ARE DONE RESEARCHING AND EXPLORING THE CODEBASE BEFORE YOU START WRITING THE PRP ***
+*** PRP 작성을 시작하기 전에 코드베이스를 연구하고 탐색한 후 중요 ***
 
-*** ULTRATHINK ABOUT THE PRP AND PLAN YOUR APPROACH THEN START WRITING THE PRP ***
+*** PRP에 대해 깊이 생각하고 접근 방식을 계획한 다음 PRP 작성을 시작하십시오 ***
 
-## Output
-Save as: `PRPs/{feature-name}.md`
+## 출력
+다음으로 저장: `PRPs/{feature-name}.md`
 
-## Quality Checklist
-- [ ] All necessary context included
-- [ ] Validation gates are executable by AI
-- [ ] References existing patterns
-- [ ] Clear implementation path
-- [ ] Error handling documented
+## 품질 체크리스트
+- [ ] 필요한 모든 컨텍스트 포함
+- [ ] 유효성 검사 게이트가 AI에 의해 실행 가능
+- [ ] 기존 패턴 참조
+- [ ] 명확한 구현 경로
+- [ ] 오류 처리 문서화
 
-Score the PRP on a scale of 1-10 (confidence level to succeed in one-pass implementation using claude codes)
+PRP 점수 (Claude 코드 사용 시 한 번에 구현 성공할 신뢰도 수준 1-10점)
 
-Remember: The goal is one-pass implementation success through comprehensive context.
+기억하십시오: 목표는 포괄적인 컨텍스트를 통한 한 번의 구현 성공입니다.

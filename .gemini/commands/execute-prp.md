@@ -1,44 +1,44 @@
-# Execute BASE PRP
+# 기본 PRP 실행
 
-Implement a feature using using the PRP file.
+PRP 파일을 사용하여 기능을 구현합니다.
 
-## PRP File
-> The target PRP file to execute (passed as $ARGUMENTS):  
+## PRP 파일
+> 실행할 대상 PRP 파일 ($ARGUMENTS로 전달됨):  
 `$ARGUMENTS`
 
 
-## Execution Process
+## 실행 프로세스
 
-1. **Load PRP**
-   - Read the specified PRP file
-   - Understand all context and requirements
-   - Follow all instructions in the PRP and extend the research if needed
-   - Use `WebFetch` if documentation URLs in PRP require loading
-   - Use `tree`, `cat`, or `grep` to explore the codebase as needed
+1. **PRP 로드**
+   - 지정된 PRP 파일 읽기
+   - 모든 컨텍스트 및 요구 사항 이해
+   - PRP의 모든 지침을 따르고 필요한 경우 연구 확장
+   - PRP의 문서 URL 로드가 필요한 경우 `WebFetch` 사용
+   - 필요에 따라 `tree`, `cat`, `grep`을 사용하여 코드베이스 탐색
 
 
-2. **ULTRATHINK**
-   - Think hard before you execute the plan. Create a comprehensive plan addressing all requirements.
-   - Break down complex tasks into smaller, manageable steps using your todos tools.
-   - Use the TodoWrite tool to create and track your implementation plan.
-   - Identify implementation patterns from existing code to follow.
+2. **초고속 사고**
+   - 계획을 실행하기 전에 신중하게 생각하십시오. 모든 요구 사항을 다루는 포괄적인 계획을 세우십시오.
+   - 복잡한 작업을 더 작고 관리하기 쉬운 단계로 세분화하십시오.
+   - TodoWrite 도구를 사용하여 구현 계획을 만들고 추적하십시오.
+   - 따를 기존 코드에서 구현 패턴을 식별하십시오.
 
-3. **Execute the plan**
-   - Execute the PRP
-   - Implement all the code
+3. **계획 실행**
+   - PRP 실행
+   - 모든 코드 구현
 
-4. **Validate**
-   - Run each validation command
-   - Fix any failures
-   - Re-run until all pass
+4. **유효성 검사**
+   - 각 유효성 검사 명령 실행
+   - 실패 수정
+   - 모두 통과할 때까지 다시 실행
 
-5. **Complete**
-   - Ensure all checklist items done
-   - Run final validation suite
-   - Report completion status
-   - Read the PRP again to ensure you have implemented everything
+5. **완료**
+   - 모든 체크리스트 항목 완료 확인
+   - 최종 유효성 검사 스위트 실행
+   - 완료 상태 보고
+   - 모든 것을 구현했는지 확인하기 위해 PRP를 다시 읽기
 
-6. **Reference the PRP**
-   - You can always reference the PRP again if needed
+6. **PRP 참조**
+   - 필요한 경우 언제든지 PRP를 다시 참조할 수 있습니다.
 
-Note: If validation fails, use error patterns in PRP to fix and retry.
+참고: 유효성 검사가 실패하면 PRP의 오류 패턴을 사용하여 수정하고 다시 시도하십시오.
